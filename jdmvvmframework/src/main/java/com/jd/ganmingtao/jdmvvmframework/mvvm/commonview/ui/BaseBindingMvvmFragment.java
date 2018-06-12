@@ -1,8 +1,6 @@
 
 package com.jd.ganmingtao.jdmvvmframework.mvvm.commonview.ui;
 
-import android.app.Fragment;
-import android.arch.lifecycle.ViewModelProviders;
 import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;
 import android.os.Bundle;
@@ -11,7 +9,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import com.jd.ganmingtao.jdmvvmframework.BR;
-import com.jd.ganmingtao.jdmvvmframework.mvvm.aac.BaseViewModelFactory;
 import com.jd.ganmingtao.jdmvvmframework.mvvm.base.BaseEvent;
 import com.jd.ganmingtao.jdmvvmframework.mvvm.base.BaseFragment;
 import com.jd.ganmingtao.jdmvvmframework.mvvm.commonview.vm.BaseViewModel;
@@ -36,7 +33,7 @@ public abstract class BaseBindingMvvmFragment<VM extends BaseViewModel, B extend
 	/**获取viewmodel类类型
 	 * @return
 	 */
-	public abstract Class getViewModelClass();
+	/*public abstract Class getViewModelClass();*/
 
 	/**
 	 * 初始化引用
@@ -44,9 +41,9 @@ public abstract class BaseBindingMvvmFragment<VM extends BaseViewModel, B extend
 	private void initDependency() {
 		if(viewModel==null) {
 			//normal
-//      viewModel = createViewModel();
+      viewModel = createViewModel();
 			//aac
-			viewModel = ViewModelProviders.of(this, new BaseViewModelFactory(getActivity().getApplication())).get((Class<VM>)getViewModelClass());
+//			viewModel = ViewModelProviders.of(this, new BaseViewModelFactory(getActivity().getApplication())).get((Class<VM>)getViewModelClass());
 		}
 	}
 
@@ -54,7 +51,7 @@ public abstract class BaseBindingMvvmFragment<VM extends BaseViewModel, B extend
 	/**创建viewmodel
 	 * @return
 	 */
-	/*protected abstract VM createViewModel();*/
+	protected abstract VM createViewModel();
 
 	/**设置viewmodel
 	 * @param viewModel

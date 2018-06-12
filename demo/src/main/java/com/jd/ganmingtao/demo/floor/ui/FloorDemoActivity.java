@@ -23,20 +23,15 @@ public class FloorDemoActivity extends BaseBindingMvvmActivity<FloorDemoViewMode
         return R.layout.activity_floor_demo;
     }
 
-    /*@Override
+    @Override
     protected FloorDemoViewModel createViewModel() {
         return new FloorDemoViewModel(this.getApplication());
-    }*/
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         initView();
-    }
-
-    @Override
-    public Class getViewModelClass() {
-        return FloorDemoViewModel.class;
     }
 
     /**

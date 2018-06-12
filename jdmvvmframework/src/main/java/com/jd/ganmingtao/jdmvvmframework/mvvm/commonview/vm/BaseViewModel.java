@@ -1,7 +1,6 @@
 package com.jd.ganmingtao.jdmvvmframework.mvvm.commonview.vm;
 
 import android.app.Application;
-import android.arch.lifecycle.AndroidViewModel;
 import android.content.Intent;
 
 import com.jd.ganmingtao.jdmvvmframework.mvvm.base.BaseEvent;
@@ -10,8 +9,9 @@ import de.greenrobot.event.EventBus;
 /**BaseViewModel 相当于mvp中的presenter
  * @author ganmingtao
  */
-public abstract class BaseViewModel extends AndroidViewModel {
+public abstract class BaseViewModel{
 
+	private Application mApplication;
 	/**UI是否显示*/
 	protected boolean isShow=false;
 
@@ -25,10 +25,14 @@ public abstract class BaseViewModel extends AndroidViewModel {
 	 * @param application 上下文
 	 */
 	public BaseViewModel(Application application){
-		super(application);
+		mApplication = application;
 		if(!EventBus.getDefault().isRegistered(this)){
 			EventBus.getDefault().register(this);
 		}
+	}
+
+	public Application getApplication() {
+		return mApplication;
 	}
 
 	/**处理UI的Intent*/

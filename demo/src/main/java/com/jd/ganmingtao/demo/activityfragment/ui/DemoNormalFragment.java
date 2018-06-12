@@ -12,16 +12,12 @@ import com.jd.ganmingtao.jdmvvmframework.mvvm.commonview.ui.BaseBindingMvvmFragm
  */
 
 public class DemoNormalFragment extends BaseBindingMvvmFragment<DemoNormalFragmentViewModel, DemoNormalFragmentBinding>{
-    @Override
-    public Class getViewModelClass() {
-        return DemoNormalFragmentViewModel.class;
-    }
 
     //normal
-    /*@Override
+    @Override
     protected DemoNormalFragmentViewModel createViewModel() {
         return new DemoNormalFragmentViewModel(getActivity().getApplication());
-    }*/
+    }
 
     @Override
     protected int createLayout() {

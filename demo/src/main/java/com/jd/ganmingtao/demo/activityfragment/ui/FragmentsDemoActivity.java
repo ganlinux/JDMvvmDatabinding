@@ -7,7 +7,6 @@ import android.widget.Toast;
 import com.jd.ganmingtao.demo.FragmentsDemoBinding;
 import com.jd.ganmingtao.demo.R;
 import com.jd.ganmingtao.demo.activityfragment.viewmodel.FragmentsDemoActivityViewModel;
-import com.jd.ganmingtao.jdmvvmframework.mvvm.aac.BaseViewModelFactory;
 import com.jd.ganmingtao.jdmvvmframework.mvvm.commonview.ui.BaseBindingMvvmActivity;
 
 /**Fragment示例activity
@@ -27,10 +26,10 @@ public class FragmentsDemoActivity extends BaseBindingMvvmActivity<FragmentsDemo
         return R.layout.activity_fragments_demo;
     }
 
-    /*@Override
+    @Override
     protected FragmentsDemoActivityViewModel createViewModel() {
         return new FragmentsDemoActivityViewModel(this.getApplication());
-    }*/
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,11 +55,6 @@ public class FragmentsDemoActivity extends BaseBindingMvvmActivity<FragmentsDemo
         if(getViewModel() != null){
             getViewModel().userClickNum.addOnPropertyChangedCallback(mUserClickCallback);
         }
-    }
-
-    @Override
-    public Class getViewModelClass() {
-        return FragmentsDemoActivityViewModel.class;
     }
 
     @Override

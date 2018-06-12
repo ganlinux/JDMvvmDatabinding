@@ -21,21 +21,16 @@ public class RecyclerviewDemoActivity extends BaseBindingMvvmActivity<Recyclervi
         return R.layout.activity_recyclerview_demo;
     }
 
-    /*@Override
+    @Override
     protected RecyclerviewDemoViewModel createViewModel() {
         return new RecyclerviewDemoViewModel(this.getApplication());
-    }*/
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         initView();
-    }
-
-    @Override
-    public Class getViewModelClass() {
-        return RecyclerviewDemoViewModel.class;
     }
 
     /**
