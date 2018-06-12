@@ -1,0 +1,23 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data class=".FloorProductNameBinding">
+        <variable
+            name="floor"
+            type="com.jd.ganmingtao.demo.floor.floors.ProductNameFloor"/>
+    </data>
+    <RelativeLayout android:id="@+id/pop_combine_order_content"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="100dp"
+            android:layout_gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_centerInParent="true"
+            android:text="@{floor.productNameString}"/>
+
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Demo</string>
+    <string name="text_demo_normal_fragment_title">我是fragment</string>
+    <string name="text_fragment_demo_activity_title">Fragment示例</string>
+    <string name="text_floor_demo_activity_title">楼层示例</string>
+    <string name="text_recyclerview_demo_activity_title">recyclerview示例</string>
+</resources>

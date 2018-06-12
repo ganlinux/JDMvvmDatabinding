@@ -1,0 +1,23 @@
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data class=".FloorCouponBinding">
+        <variable
+            name="floor"
+            type="com.jd.ganmingtao.demo.floor.floors.CouponFloor"/>
+    </data>
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="100dp"
+            android:layout_gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_centerInParent="true"
+            android:text="@{floor.couponName}"/>
+
+    </RelativeLayout>
+</layout>

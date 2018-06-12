@@ -1,0 +1,27 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data class=".IncludeProductNumBinding">
+        <variable
+            name="size"
+            type="String"/>
+        <variable
+            name="color"
+            type="String"/>
+    </data>
+    <LinearLayout android:id="@+id/pop_combine_order_content"
+                  android:layout_width="fill_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{color}"
+            android:layout_marginRight="5dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{size}"/>
+
+    </LinearLayout>
+</layout>

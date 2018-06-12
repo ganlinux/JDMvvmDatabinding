@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data class=".DemoNormalFragmentBinding">
+        <variable
+            name="viewModel"
+            type="com.jd.ganmingtao.demo.activityfragment.viewmodel.DemoNormalFragmentViewModel"/>
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/combine_order_title_text"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="left"
+            android:text="@{viewModel.fragmentTitle}" />
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="@{viewModel.button1Visibility}"
+                android:onClick="@{viewModel.button1OnClick}"
+                android:text="按钮1"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="@{viewModel.button2Visibility}"
+                android:onClick="@{viewModel.button2OnClick}"
+                android:text="按钮2"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,98 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data class=".RecyclerviewDemoItemBinding">
+        <variable
+            name="item"
+            type="com.jd.ganmingtao.demo.recyclerview.viewholder.RecyclerviewDemoItemViewHolder"/>
+    </data>
+    <RelativeLayout android:id="@+id/pop_combine_order_content"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/cart_single_product_image_item"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="10dp"
+            android:adjustViewBounds="true"
+            android:padding="1px"
+            android:scaleType="fitCenter"
+            app:fresco_load_image="@{item.productImageUrlString}"/>
+
+        <RelativeLayout
+            android:id="@+id/cart_single_product_detail_layout_item"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingRight="10dp"
+            android:layout_alignTop="@id/cart_single_product_image_item"
+            android:layout_toRightOf="@id/cart_single_product_image_item">
+
+            <!-- 商品名称 -->
+            <TextView
+                android:id="@+id/cart_single_product_name_item"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="2dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:text="@{item.productNameString}"/>
+
+        </RelativeLayout>
+        <!-- 商品价格 -->
+        <TextView
+            android:id="@+id/cart_single_product_price_item"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/cart_single_product_detail_layout_item"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textColor="#f23030"
+            android:textSize="12sp"
+            android:layout_alignBottom="@id/cart_single_product_image_item"
+            android:text="@{item.productPriceString}"/>
+        <RelativeLayout
+            android:id="@+id/cart_single_product_property_layout_item"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingRight="10dp"
+            android:layout_above="@id/cart_single_product_price_item"
+            android:layout_below="@id/cart_single_product_detail_layout_item"
+            android:layout_toRightOf="@id/cart_single_product_image_item">
+
+            <!-- 商品数量 -->
+            <com.jd.ganmingtao.demo.recyclerview.customview.ProductNumTextView
+                android:id="@+id/cart_single_product_num_item"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="2dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                app:lib_cart_productnum="@{item.productNumString}"/>
+            <include
+                android:id="@+id/lib_cart_property_layout"
+                layout="@layout/layout_product_property"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="9dp"
+                android:layout_toLeftOf="@id/cart_single_product_num_item"
+                app:color="@{item.productColorString}"
+                app:size="@{item.productSizeString}"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,23 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data class=".FloorBigImageBinding">
+        <variable
+            name="floor"
+            type="com.jd.ganmingtao.demo.floor.floors.BigImageFloor"/>
+    </data>
+    <RelativeLayout android:id="@+id/pop_combine_order_content"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="300dp"
+            android:layout_gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:src="@mipmap/ic_launcher"
+            android:layout_centerInParent="true"/>
+
+    </RelativeLayout>
+</layout>
