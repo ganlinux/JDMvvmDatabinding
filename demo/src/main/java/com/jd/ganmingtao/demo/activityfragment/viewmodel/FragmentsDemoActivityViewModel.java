@@ -1,6 +1,7 @@
 package com.jd.ganmingtao.demo.activityfragment.viewmodel;
 
 import android.app.Application;
+import android.arch.lifecycle.MutableLiveData;
 import android.databinding.ObservableField;
 
 import com.jd.ganmingtao.demo.R;
@@ -17,11 +18,11 @@ public class FragmentsDemoActivityViewModel extends BaseViewModel {
     /**
      * 标题
      */
-    public final ObservableField<String> pageTitle = new ObservableField<String>();
+    public final MutableLiveData<String> pageTitle = new MutableLiveData<>();
     /**
      * 用户点击数
      */
-    public final ObservableField<Integer> userClickNum = new ObservableField<Integer>(0);
+    public final MutableLiveData<Integer> userClickNum = new MutableLiveData<>();
 
     /**构造函数
      * @param application 上下文
@@ -42,7 +43,7 @@ public class FragmentsDemoActivityViewModel extends BaseViewModel {
 
     @Override
     protected void onAttach() {
-            pageTitle.set(getApplication().getString(R.string.text_fragment_demo_activity_title));
+            pageTitle.postValue(getApplication().getString(R.string.text_fragment_demo_activity_title));
     }
 
     @Override
@@ -60,13 +61,13 @@ public class FragmentsDemoActivityViewModel extends BaseViewModel {
      */
     // TODO: 2017/12/28 此处有坑  userClickNum未初始化 userClickNum.get() == null
     public void userClicked(){
-        userClickNum.set(userClickNum.get() + 1);
+        userClickNum.postValue(userClickNum.getValue() + 1);
     }
 
     /**获取点击数
      * @return 点击数
      */
     public int getuserClickedNum() {
-        return userClickNum.get();
+        return userClickNum.getValue();
     }
 }

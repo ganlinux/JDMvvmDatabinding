@@ -2,7 +2,6 @@ package com.jd.ganmingtao.demo.bindingadapter;
 
 import android.databinding.BindingAdapter;
 
-import com.facebook.drawee.view.SimpleDraweeView;
 import com.jd.ganmingtao.demo.recyclerview.customview.ProductNumTextView;
 
 /**

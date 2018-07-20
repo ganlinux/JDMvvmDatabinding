@@ -1,6 +1,7 @@
 package com.jd.ganmingtao.demo.floor.viewmodel;
 
 import android.app.Application;
+import android.arch.lifecycle.MutableLiveData;
 import android.databinding.ObservableField;
 import com.jd.ganmingtao.demo.R;
 import com.jd.ganmingtao.jdmvvmframework.mvvm.base.BaseEvent;
@@ -16,7 +17,7 @@ public class FloorDemoViewModel extends BaseViewModel {
     /**
      * 标题
      */
-    public final ObservableField<String> pageTitle = new ObservableField<String>();
+    public final MutableLiveData<String> pageTitle = new MutableLiveData<>();
 
     /**构造函数
      * @param application 全局上下文
@@ -38,7 +39,7 @@ public class FloorDemoViewModel extends BaseViewModel {
     @Override
     protected void onAttach() {
         if(getApplication() != null){
-            pageTitle.set(getApplication().getString(R.string.text_floor_demo_activity_title));
+            pageTitle.postValue(getApplication().getString(R.string.text_floor_demo_activity_title));
         }
     }
 

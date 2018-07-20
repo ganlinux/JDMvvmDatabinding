@@ -1,6 +1,7 @@
 package com.jd.ganmingtao.demo.activityfragment.viewmodel;
 
 import android.app.Application;
+import android.arch.lifecycle.MutableLiveData;
 import android.databinding.ObservableField;
 import android.databinding.ObservableInt;
 import android.view.View;
@@ -19,15 +20,15 @@ public class DemoNormalFragmentViewModel extends BaseViewModel {
     /**
      * button1显示状态
      */
-    public final ObservableInt button1Visibility = new ObservableInt(View.VISIBLE);
+    public final MutableLiveData<Integer> button1Visibility = new MutableLiveData<>();
     /**
      * button2显示状态
      */
-    public final ObservableInt button2Visibility = new ObservableInt(View.INVISIBLE);
+    public final MutableLiveData<Integer> button2Visibility = new MutableLiveData<>();
     /**
      * fragment标题
      */
-    public final ObservableField<String> fragmentTitle = new ObservableField<String>();
+    public final MutableLiveData<String> fragmentTitle = new MutableLiveData<>();
 
     /**构造函数
      * @param application 上下文
@@ -48,7 +49,7 @@ public class DemoNormalFragmentViewModel extends BaseViewModel {
 
     @Override
     protected void onAttach() {
-        fragmentTitle.set(getApplication().getString(R.string.text_demo_normal_fragment_title));
+        fragmentTitle.postValue(getApplication().getString(R.string.text_demo_normal_fragment_title));
     }
 
     @Override
@@ -66,15 +67,15 @@ public class DemoNormalFragmentViewModel extends BaseViewModel {
      */
     public void button1OnClick(View view)
     {
-        button1Visibility.set(View.INVISIBLE);
-        button2Visibility.set(View.VISIBLE);
+        button1Visibility.postValue(View.INVISIBLE);
+        button2Visibility.postValue(View.VISIBLE);
     }
     /**
      * 点击刷新用户数据事件
      */
     public void button2OnClick(View view)
     {
-        button1Visibility.set(View.VISIBLE);
-        button2Visibility.set(View.INVISIBLE);
+        button1Visibility.postValue(View.VISIBLE);
+        button2Visibility.postValue(View.INVISIBLE);
     }
 }

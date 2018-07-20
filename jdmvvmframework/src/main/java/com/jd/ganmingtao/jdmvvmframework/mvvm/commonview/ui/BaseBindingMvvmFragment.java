@@ -95,6 +95,7 @@ public abstract class BaseBindingMvvmFragment<VM extends BaseViewModel, B extend
 		initDependency();
 		binding = DataBindingUtil.<B>inflate(inflater, createLayout(), container, false);
 		binding.setVariable(BR.viewModel, viewModel);
+		binding.setLifecycleOwner(this);
 		return binding.getRoot();
 	}
 

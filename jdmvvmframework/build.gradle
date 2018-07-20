@@ -2,7 +2,7 @@ apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 26
-    buildToolsVersion "26.0.2"
+    buildToolsVersion '27.0.3'
 
     defaultConfig {
         minSdkVersion 14
@@ -48,7 +48,7 @@ dependencies {
     // 仅支持 WebP 静态图，需要添加
     compile 'com.facebook.fresco:webpsupport:0.12.0'
 
-    compile "android.arch.lifecycle:runtime:1.0.0-alpha1"
-    compile "android.arch.lifecycle:extensions:1.0.0-alpha1"
-    annotationProcessor "android.arch.lifecycle:compiler:1.0.0-alpha1"
+    compile "android.arch.lifecycle:runtime:1.1.0"
+    compile "android.arch.lifecycle:extensions:1.1.0"
+    annotationProcessor "android.arch.lifecycle:compiler:1.1.0"
 }

@@ -1,13 +1,14 @@
 package com.jd.ganmingtao.demo.activityfragment.ui;
 
+import android.arch.lifecycle.Observer;
 import android.databinding.Observable;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.Toast;
 import com.jd.ganmingtao.demo.FragmentsDemoBinding;
 import com.jd.ganmingtao.demo.R;
 import com.jd.ganmingtao.demo.activityfragment.viewmodel.FragmentsDemoActivityViewModel;
-import com.jd.ganmingtao.jdmvvmframework.mvvm.aac.BaseViewModelFactory;
 import com.jd.ganmingtao.jdmvvmframework.mvvm.commonview.ui.BaseBindingMvvmActivity;
 
 /**Fragment示例activity
@@ -54,7 +55,12 @@ public class FragmentsDemoActivity extends BaseBindingMvvmActivity<FragmentsDemo
             }
         };
         if(getViewModel() != null){
-            getViewModel().userClickNum.addOnPropertyChangedCallback(mUserClickCallback);
+            getViewModel().userClickNum.observe(this, new Observer<Integer>() {
+                @Override
+                public void onChanged(@Nullable Integer data) {
+                    shortToast("点了第" + data + "下");
+                }
+            });
         }
     }
 
@@ -66,9 +72,6 @@ public class FragmentsDemoActivity extends BaseBindingMvvmActivity<FragmentsDemo
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        if (mUserClickCallback != null && getViewModel() != null) {
-            getViewModel().userClickNum.removeOnPropertyChangedCallback(mUserClickCallback);
-        }
     }
 
     /**显示吐司

@@ -68,6 +68,7 @@ public abstract class BaseBindingMvvmActivity<VM extends BaseViewModel, B extend
   public void initBinding(){
     binding = DataBindingUtil.<B>setContentView(this, createLayout());
     binding.setVariable(BR.viewModel, viewModel);
+    binding.setLifecycleOwner(this);
   }
 
   /**获取数据绑定对象
